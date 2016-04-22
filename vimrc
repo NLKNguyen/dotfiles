@@ -1,29 +1,11 @@
 set nocompatible " no compatible with VI
 
-" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-" across (heterogeneous) systems easier.
-" if has('win32') || has('win64')
-"   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-" endif
-
 "=============================================================
 " PLUGIN MANAGER: Vundle
 "===================== VUNDLE BEGIN ==========================
 filetype off
 
-" Configure Vundle Location And Auto Clone If Necessary:
-if has('win32') || has('win64') " On Windows
-  set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-  " if empty(glob("$HOME/vimfiles/bundle/Vundle.vim"))
-  "   execute '!git clone https://github.com/VundleVim/Vundle.vim.git $HOME/vimfiles/bundle/Vundle.vim'
-  " endif
-else " On Linux / Unix
-  if empty(glob("$HOME/.vim/bundle/Vundle.vim"))
-    execute '!git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
-  endif
-  set rtp+=$HOME/.vim/bundle/Vundle.vim
-endif
-
+set rtp+=$HOME/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
