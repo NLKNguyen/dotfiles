@@ -7,7 +7,7 @@ Personal Configuration Dotfiles
 Make sure `HOME` environment variable is set to the current user home directory.
 
 Open `Command Prompt` with Adminstrator Permission
-```
+```bash
 git clone https://github.com/NLKNguyen/dotfiles %HOME%/dotfiles && mklink %HOME%\.vimrc %HOME%\dotfiles\vimrc && mklink %HOME%\.gvimrc %HOME%\dotfiles\gvimrc && git clone https://github.com/VundleVim/Vundle.vim.git %HOME%/.vim/bundle/Vundle.vim && vim +PluginInstall +qall
 ```
 
@@ -19,7 +19,7 @@ git clone https://github.com/NLKNguyen/dotfiles %HOME%/dotfiles && mklink %HOME%
 # Manual Installation
 ### Download dotfiles
 From HOME directory
-```
+```bash
 git clone https://github.com/NLKNguyen/dotfiles
 ```
 
@@ -30,7 +30,7 @@ Make sure `HOME` environment variable is set to the current user home directory.
 
 Open `Command Prompt` with Adminstrator Permission
 
-```
+```bash
 mklink %HOME%\.vimrc %HOME%\dotfiles\vimrc
 mklink %HOME%\.gvimrc %HOME%\dotfiles\gvimrc
 ```
@@ -41,8 +41,8 @@ mklink %HOME%\.gvimrc %HOME%\dotfiles\gvimrc
 
 ### Install Vundle plugin manager
 From HOME directory
-```
-git clone https://github.com/VundleVim/Vundle.vim.git vimfiles/bundle/Vundle.vim
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
 ```
 
 ### First Run
