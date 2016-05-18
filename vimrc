@@ -103,7 +103,7 @@ Plugin 'honza/vim-snippets'
 " Nicer Lines: {{{
 Plugin 'https://github.com/mkitt/tabline.vim'
 
-" Plugin 'https://github.com/bling/vim-airline'
+Plugin 'https://github.com/bling/vim-airline'
 let g:airline_powerline_fonts = 1
 " let g:airline_extensions = ['tabline', 'ctrlp', 'tmuxline']
 " let g:airline_theme='PaperColor-Dark'
@@ -165,14 +165,6 @@ set shiftwidth=2 "spaces for autoindenting
 
 vmap @ :normal @
 nmap ; :<up>
-
-" Use System Clipboard By Default:
-" If Vim distro supports it, then yanking (y) and pasting (p) use the 
-" same system clipboard. If it doesn't work, then consider this plugin:
-" https://github.com/NLKNguyen/copy-cut-paste.vim
-if has('unnamedplus')
-  clipboard^=unnamed,unnamedplus
-endif
 
 nnoremap QQ :copen<CR>
 " Quicker way to save file
@@ -260,3 +252,4 @@ autocmd FileType java nnoremap <leader>rr :update <bar> Start -wait=always javac
 autocmd FileType algol68 nnoremap <leader>rr :update <bar> Start -wait=always a68g %<CR>
 autocmd FileType lisp nnoremap <leader>rt :update <bar> Start -wait=always clisp %<CR>
 autocmd FileType lisp nnoremap <leader>rr :update <bar> call g:Pipe('clisp ' . expand('%:p'))<CR>
+autocmd FileType prolog nnoremap <leader>rr :update <bar> Start -wait=always swipl -s %<CR>
