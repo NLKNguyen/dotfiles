@@ -18,7 +18,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'NLKNguyen/pipe.vim'
 
 " Commonly Used Navigation Keymaps:
-Plugin 'NLKNguyen/easy-navigate.vim'
+" Plugin 'NLKNguyen/easy-navigate.vim'
 
 " Natural Copy Cut Paste:
 Plugin 'NLKNguyen/copy-cut-paste.vim'
@@ -74,8 +74,8 @@ nmap ga <Plug>(EasyAlign)
 " Source Code Outline Viewer:
 Plugin 'https://github.com/majutsushi/tagbar'
 " let g:tagbar_left=1
-nnoremap <leader>t :TagbarOpen j<CR>
-nnoremap <leader>T :TagbarToggle<CR>
+" nnoremap <leader>t :TagbarOpen j<CR>
+nnoremap <space><tab> :TagbarToggle<CR>
 
 " Fuzzy File Finder:
 Plugin 'https://github.com/kien/ctrlp.vim'
@@ -103,17 +103,18 @@ Plugin 'honza/vim-snippets'
 " Nicer Lines: {{{
 Plugin 'https://github.com/mkitt/tabline.vim'
 
-Plugin 'https://github.com/bling/vim-airline'
-let g:airline_powerline_fonts = 1
+" Plugin 'https://github.com/bling/vim-airline'
+" Plugin 'https://github.com/vim-airline/vim-airline-themes'
+" let g:airline_powerline_fonts = 1
 " let g:airline_extensions = ['tabline', 'ctrlp', 'tmuxline']
-" let g:airline_theme='PaperColor-Dark'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ctrlp#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#hunks#enabled=1
+" let g:airline_theme='papercolor'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#ctrlp#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#hunks#enabled=1
 
-Plugin 'https://github.com/edkolev/tmuxline.vim'
-let g:airline#extensions#tmuxline#enabled = 1
+" Plugin 'https://github.com/edkolev/tmuxline.vim'
+" let g:airline#extensions#tmuxline#enabled = 1
 " }}}
 
 " Language Specific: {{{
@@ -143,7 +144,7 @@ filetype plugin indent on    " required
 
 syntax on
 
-"set background=dark
+set background=dark
 set t_Co=256 "use 256-color terminal setting
 colorscheme PaperColor
 
@@ -170,10 +171,61 @@ nnoremap QQ :copen<CR>
 " Quicker way to save file
 nmap <leader><leader> :update <CR>
 
+" Commonly Used Navigation Keymaps: {{{
+
+" Natural line jumping between wrapped lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Quickfix
+noremap [q :cprevious<CR>
+noremap ]q :cnext<CR>
+noremap [Q :cfirst<CR>
+noremap ]Q :clast<CR>
+
+" Location List
+noremap [l :lprevious<CR>
+noremap ]l :lnext<CR>
+noremap [L :lfirst<CR>
+noremap ]L :llast<CR>
+
+" Buffer
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [B :bfirst<CR>
+nnoremap ]B :blast<CR>
+
+" Tab
+" noremap [t :tabprevious<CR>
+" noremap ]t :tabnext<CR>
+" noremap [T :tabfirst<CR>
+" noremap ]T :tablast<CR>
+noremap <space>h :tabprevious<CR>
+noremap <space>l :tabnext<CR>
+noremap <space>H :tabfirst<CR>
+noremap <space>L :tablast<CR>
+noremap <space>` :tabnew<CR>
+noremap <space>k :tabmove +1<CR>
+noremap <space>j :tabmove -1<CR>
+noremap <space>K :tabmove <CR>
+noremap <space>J :tabmove 0<CR>
+noremap <space>1 1gt
+noremap <space>2 2gt
+noremap <space>3 3gt
+noremap <space>4 4gt
+noremap <space>5 5gt
+noremap <space>6 6gt
+noremap <space>7 7gt
+noremap <space>8 8gt
+noremap <space>9 9gt
+noremap <space>- :Texplore<CR>
+" }}}
 
 " Open NERDTree File Browser:
 "nnoremap <space>- :NERDTreeToggle<CR>
-nnoremap <space>- :NERDTreeTabsToggle<CR>
+nnoremap <tab> :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -193,13 +245,15 @@ nnoremap <space>n :set number!<CR>
 nnoremap <space>w :set wrap!<CR>
 
 " Toggle Listing Whitespaces:
-nnoremap <space>l :set list!<CR>
+" nnoremap <space>l :set list!<CR>
+" nnoremap <space>l :set list!<CR>
 
 " Toggle Spelling Checking:
 nmap <space>s :setlocal spell! spell?<CR>
 
 " Turn Off Search Highlighting:
-nmap <space>h :nohl<CR>
+" nmap <space>h :nohl<CR>
+nmap <space>m :nohl<CR>
 
 
 
